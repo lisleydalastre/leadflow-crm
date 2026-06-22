@@ -152,3 +152,42 @@ INSERT INTO usuarios (nombre, email, password, rol) VALUES
     ('Administrador', 'admin@leadflow.com',
      '$2y$12$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uZutcm9i',
      'admin');
+
+INSERT INTO leads
+(nombre,email,telefono,empresa,fuente_id,estado_id,usuario_id,notas,valor_estimado)
+VALUES
+('Carlos Pérez','carlos@email.com','3001234567','Marketing Pro',1,6,1,'Cliente premium',4500000),
+
+('Laura Gómez','laura@email.com','3012345678','Diseños Creativos',2,2,1,'Pendiente seguimiento',1800000),
+
+('Andrés Torres','andres@email.com','3023456789','Torres Web',3,1,1,'Solicitó información por WhatsApp',1200000),
+
+('María Rodríguez','maria@email.com','3034567890','Academia Digital',1,3,1,'Muy interesada',3200000),
+
+('Camila Sánchez','camila@email.com','3045678901','Consultora CS',4,6,1,'Cliente recurrente',5500000),
+
+('Diego Ramírez','diego@email.com','3056789012','DR Soluciones',5,5,1,'Propuesta enviada',2700000),
+
+('Valentina Castro','valentina@email.com','3067890123','VC Agency',3,6,1,'Cierre exitoso',3900000),
+
+('Felipe Morales','felipe@email.com','3078901234','FM Negocios',1,1,1,'Lead nuevo',900000),
+
+('Isabella Ortiz','isabella@email.com','3089012345','IO Marketing',2,2,1,'Segunda llamada pendiente',2400000);     
+
+INSERT INTO historial_estados
+(lead_id,estado_anterior,estado_nuevo,usuario_id,comentario)
+VALUES
+(1,5,6,1,'Venta cerrada'),
+(2,1,2,1,'Primer contacto'),
+(4,2,3,1,'Lead calificado'),
+(5,5,6,1,'Cliente ganado'),
+(7,5,6,1,'Conversión exitosa');
+
+INSERT INTO ventas
+(lead_id,usuario_id,monto,producto,fecha_venta,metodo_pago,notas)
+VALUES
+(1,1,4500000,'Curso Marketing Premium','2026-02-10','Transferencia','Pago completo'),
+
+(5,1,5500000,'Mentoría 1 a 1','2026-04-15','Tarjeta','Cliente recurrente'),
+
+(7,1,3900000,'Desarrollo Web','2026-05-20','Transferencia','Proyecto empresarial');

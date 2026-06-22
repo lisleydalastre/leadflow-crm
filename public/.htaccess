@@ -1,0 +1,8 @@
+# LeadFlow CRM - Rewrite Rules para XAMPP/Apache
+Options -Indexes
+RewriteEngine On
+
+# Redirigir todo al front controller excepto archivos reales
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
